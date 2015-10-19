@@ -1,28 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <%@page import="eu.telecom_bretagne.cabinet_recrutement.front.utils.ServicesLocator,
-                eu.telecom_bretagne.cabinet_recrutement.service.IServiceEntreprise,
-                eu.telecom_bretagne.cabinet_recrutement.data.model.Entreprise,
+                eu.telecom_bretagne.cabinet_recrutement.service.IServiceCandidature,
+                eu.telecom_bretagne.cabinet_recrutement.data.model.Candidature,
                 java.util.List"%>
 
 <%
   // Récupération du service (bean session)
-	IServiceEntreprise serviceEntreprise = (IServiceEntreprise) ServicesLocator.getInstance().getRemoteInterface("ServiceEntreprise");
+	IServiceCandidature serviceCandidature = (IServiceCandidature) ServicesLocator.getInstance().getRemoteInterface("ServiceCandidature");
 // Appel de la fonctionnalité désirée auprès du service
-	List<Entreprise> entreprises = serviceEntreprise.listeDesEntreprises();
+	List<Candidature> candidatures = serviceCandidature.listeDesCandidatures();
 %>
 
 <html>
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Cabinet de recrutement : liste des entreprises référencées</title>
+    <title>Cabinet de recrutement : liste des candidatures référencées</title>
     <link rel="stylesheet" href="styles.css" type="text/css" />
   </head>
 
   <body>
   
-		<h2>Liste des entreprises référencées :</h2>
+		<h2>Liste des candidatures référencées :</h2>
 
 		<table id="affichage">
 		  <tr>
@@ -31,13 +31,13 @@
 		    <th>Adresse postale (ville)</th>
 		  </tr>
 		  <%
-		  for(Entreprise entreprise : entreprises)
+		  for(Candidature candidature : candidatures)
 		  {
 		    %>
 		    <tr>
-		     <td>ENT_<%=entreprise.getIdEnt()%></td>
-		     <td><a href="infos_entreprise.jsp?id=<%=entreprise.getIdEnt()%>"><%=entreprise.getNom()%></a></td>
-		     <td><%=entreprise.getAdressepostale()%></td>
+		     <td>ENT_<%=candidature.getIdCandid()%></td>
+		     <td><a href="infos_candidature.jsp?id=<%=candidature.getIdCandid()%>"><%=candidature.getNom()%></a></td>
+		     <td><%=candidature.getAdressepostale()%></td>
 		    </tr>
 		    <%
 		  }

@@ -130,12 +130,18 @@ public class ControlesDAOServlet extends HttpServlet
 //		secteuractiviteDAO.update(s);
 		
 		
-//		candidatureDAO.remove(candidatureDAO.findById(9));
+//		candidatureDAO.remove(candidatureDAO.findById(18));
 		
 //		Candidature candModif = candidatureDAO.findById(10);
 //		candModif.setCurriculumvitae("bla bla bla");
 //		candidatureDAO.update(candModif);
 		
+		
+		List<Candidature> candidatures = candidatureDAO.findAll();
+		for(Candidature candidature : candidatures)
+		{
+			out.println(candidature.getNom());
+		}
 	}
 	//-----------------------------------------------------------------------------
 }
