@@ -141,6 +141,9 @@ public class ControlesDAOServlet extends HttpServlet
 		for(Candidature candidature : candidatures)
 		{
 			out.println(candidature.getNom());
+			out.println(candidature.getPrenom());
+			out.println(candidature.getAdresseemail());
+			out.println(candidature.getCurriculumvitae());
 		}
 	}
 	//-----------------------------------------------------------------------------
