@@ -42,4 +42,13 @@ public class ServiceEntreprise implements IServiceEntreprise
 		return entrepriseDAO.findAll();
 	}
 	// -----------------------------------------------------------------------------
+	@Override
+	public void setEntreprise(String nom, String desc, String adresse_postale) {
+		Entreprise nouvelleEntreprise = new Entreprise();
+		nouvelleEntreprise.setNom(nom);
+		nouvelleEntreprise.setDescriptif(desc);
+		nouvelleEntreprise.setAdressepostale(adresse_postale);
+		entrepriseDAO.persist(nouvelleEntreprise);
+		
+	}
 }

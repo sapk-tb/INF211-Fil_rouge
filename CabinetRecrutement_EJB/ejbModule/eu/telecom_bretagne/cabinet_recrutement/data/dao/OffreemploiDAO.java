@@ -1,6 +1,8 @@
 package eu.telecom_bretagne.cabinet_recrutement.data.dao;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.List.*;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -65,7 +67,7 @@ public class OffreemploiDAO {
 
 	public List<Offreemploi> findByEntreprise(int IdEnt){
 		Query query = entityManager
-				.createQuery("select offre from OffreEmloi offre where offre.entreprise.idEnt = :IdENT order by offre.idOffre desc");
+				.createQuery("select offre from Offreemploi offre where offre.entreprise.idEnt = :IdENT order by offre.idOffre desc");
 		query.setParameter("IdENT", IdEnt);
 		
 		List<Offreemploi> l = query.getResultList();
