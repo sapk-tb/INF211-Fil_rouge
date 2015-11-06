@@ -59,8 +59,8 @@
 		      </tr>
 		      <tr>
 		        <th>Descriptif :</th>
-		        <td>
-		          <%=Utils.text2HTML(entreprise.getDescriptif())%>
+		        <td>   	  
+		        	  <%= Utils.text2HTML(entreprise.getDescriptif())%>
 		        </td>
 		      </tr>
 		      <tr>
@@ -71,7 +71,7 @@
 		      </tr>
 		    </table>
         
-        <a href="liste_entreprises.jsp">Retour à la liste des entreprises</a>
+    <a href="template.jsp?action=liste_entreprises">Retour à la liste des entreprises</a>
 
 		    <%
 		  }

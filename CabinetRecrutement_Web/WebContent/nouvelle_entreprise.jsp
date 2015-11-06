@@ -26,8 +26,8 @@
 
 	<h2>Référencer une nouvelle entreprise</h2>
 
-	<form action="template.jsp?action=insersion_nouvelle_entreprise" method="get">
-		<input type="hidden" name="action" value="insersion_nouvelle_entreprise" />
+	<form action="template.jsp?action=insertion_nouvelle_entreprise" method="get">
+		<input type="hidden" name="action" value="insertion_nouvelle_entreprise" />
 		<table id="affichage">
 			<tr>
 				<th style="width: 170px;">Nom :</th>

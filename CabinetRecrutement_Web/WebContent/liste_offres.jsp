@@ -1,3 +1,4 @@
+<%@page import="eu.telecom_bretagne.cabinet_recrutement.service.IServiceOffreemploi"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -10,12 +11,19 @@
                 java.util.List"%>
 
 <%
+
+Object utilisateur = session.getAttribute("utilisateur");
   // Récupération du service (bean session)
 	IServiceEntreprise serviceEntreprise = (IServiceEntreprise) ServicesLocator.getInstance().getRemoteInterface("ServiceEntreprise");
+	IServiceOffreemploi serviceOffreEmploi = (IServiceOffreemploi) ServicesLocator.getInstance().getRemoteInterface("ServiceOffreemploi");
 // Appel de la fonctionnalité désirée auprès du service
 	List<Entreprise> entreprises = serviceEntreprise.listeDesEntreprises();
 
-
+	if(session.getAttribute("utilisateur") != null)
+	  {
+		out.println("AZAAAAAA");
+	  }
+	  
 %>
 
 <html>
@@ -28,11 +36,16 @@
 
 <body>
 
-	<h2>Référencer une nouvelle entreprise</h2>
+	<h2>Liste des offres d'emploi</h2>
 <%
+if(utilisateur instanceof Entreprise && request.getParameter("id_entreprise") != null){
+	Entreprise e = (Entreprise) utilisateur;
+	out.println(serviceOffreEmploi.listeDesOffresPourUneEntreprise(e.getIdEnt()));
+} else {
+	out.println(serviceOffreEmploi.listeDesOffreemploi());
+}
 
 
-out.println("nom : ");
 
 
 

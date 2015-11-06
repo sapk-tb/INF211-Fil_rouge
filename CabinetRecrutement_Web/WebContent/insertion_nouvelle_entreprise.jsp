@@ -45,8 +45,11 @@ String descriptif = request.getParameter("descriptif");
 String adresse_postale = request.getParameter("adresse_postale");
 
 out.println("nom : "+nom);
+%><br><%
 out.println("descriptif : "+descriptif);
+%><br><%
 out.println("adresse postale : "+adresse_postale);
+%><br><%
 
 serviceEntreprise.setEntreprise(nom, descriptif, adresse_postale);
 
