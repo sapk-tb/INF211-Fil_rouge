@@ -1,12 +1,18 @@
 package eu.telecom_bretagne.cabinet_recrutement.service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Set;
+
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import eu.telecom_bretagne.cabinet_recrutement.data.dao.OffreemploiDAO;
+import eu.telecom_bretagne.cabinet_recrutement.data.model.Candidature;
+import eu.telecom_bretagne.cabinet_recrutement.data.model.Niveauqualification;
 import eu.telecom_bretagne.cabinet_recrutement.data.model.Offreemploi;
+import eu.telecom_bretagne.cabinet_recrutement.data.model.Secteuractivite;
 
 /**
  * Session Bean implementation class ServiceOffreemploi
@@ -37,6 +43,17 @@ public class ServiceOffreemploi implements IServiceOffreemploi {
 	@Override
 	public List<Offreemploi> listeDesOffresPourUneEntreprise(int id) {
 		return offreemploiDAO.findByEntreprise(id);
+	}
+
+	@Override
+	public void setOffreemploi(String titre, String descriptifmission, String profilrecherche, Niveauqualification niveau, Set<Secteuractivite> secteurs) {
+		Offreemploi nouvelleOffreemploi = new Offreemploi();
+		nouvelleOffreemploi.setTitre(titre);
+		nouvelleOffreemploi.setDescriptifmission(descriptifmission);
+		nouvelleOffreemploi.setDatedepot(new Date());
+		nouvelleOffreemploi.setNiveauqualification(niveau);
+		nouvelleOffreemploi.setSecteuractivites(secteurs);
+		offreemploiDAO.persist(nouvelleOffreemploi);
 	}
 
 }

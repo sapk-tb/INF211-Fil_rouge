@@ -25,14 +25,14 @@ public class Utils
 	{
 		Date d = null;
 		try
-    {
-	    d = formatDeDate.parse(dateString);
-    }
-    catch (ParseException e)
-    {
-	    e.printStackTrace();
-    }
-    return d;
+		{
+			d = formatDeDate.parse(dateString);
+		}
+		catch (ParseException e)
+		{
+			e.printStackTrace();
+		}
+		return d;
 	}
 	//-----------------------------------------------------------------------------
 	/**
@@ -67,7 +67,9 @@ public class Utils
 	 */
 	public static String text2HTML(String contenu)
 	{
-		return contenu.replace("\n", "<br/>").trim();
+		if(contenu == null) return "";
+		else
+			return contenu.replace("\n", "<br/>").trim();
 	}
 	//-----------------------------------------------------------------------------
 }

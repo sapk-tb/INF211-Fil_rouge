@@ -107,85 +107,14 @@
 				<td>
 					<table id="tab_interne">
 						<tr>
-							<%
-
-							%>
-							<td><input type="checkbox" name="secteur" value="1">Achats/Logistique</td>
-
-							<td><input type="checkbox" name="secteur" value="2">Assistanat/Secrétariat</td>
-
-							<td><input type="checkbox" name="secteur" value="3">Agriculture</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="4">Agroalimentaire</td>
-
-							<td><input type="checkbox" name="secteur" value="5">Assurance</td>
-
-							<td><input type="checkbox" name="secteur" value="6">Audit/Conseil/Expertises</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="7">BTP/Immobilier</td>
-
-							<td><input type="checkbox" name="secteur" value="8">Commercial</td>
-
-							<td><input type="checkbox" name="secteur" value="9">Communication/Art/Média/Mode</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="10">Comptabilité</td>
-
-							<td><input type="checkbox" name="secteur" value="11">Direction
-								Générale/Executive</td>
-
-							<td><input type="checkbox" name="secteur" value="12">Distribution/Commerce</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="13">Electronique/Microélectronique</td>
-
-							<td><input type="checkbox" name="secteur" value="14">Environnement</td>
-
-							<td><input type="checkbox" name="secteur" value="15">Finance/Banque</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="16">Formation/Enseignement</td>
-
-							<td><input type="checkbox" name="secteur" value="17">Hôtellerie/Restauration/Tourisme</td>
-
-							<td><input type="checkbox" name="secteur" value="18">Industrie/Ingénierie/Production</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="19">Informatique</td>
-
-							<td><input type="checkbox" name="secteur" value="20">Juridique/Fiscal/Droit</td>
-
-							<td><input type="checkbox" name="secteur" value="21">Marketing</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="22">Public/Parapublic</td>
-
-							<td><input type="checkbox" name="secteur" value="23">Ressources
-								Humaines</td>
-
-							<td><input type="checkbox" name="secteur" value="24">Santé/Social/Biologie/Humanitaire</td>
-
-						</tr>
-						<tr>
-
-							<td><input type="checkbox" name="secteur" value="25">Télécom/Réseaux</td>
-
+							<td>
+								<%
+									List<Secteuractivite> listeSA = serviceSecteuractivite.listeDesSecteuractivite();
+									for (int i = 0; i < listeSA.size(); i++) {
+										%><input type="checkbox" name="secteur" value="<%=listeSA.get(i).getIdSa()%>"><%=listeSA.get(i).getIntitule()%><br /><%
+									}
+								%>
+							</td>
 						</tr>
 					</table>
 				</td>

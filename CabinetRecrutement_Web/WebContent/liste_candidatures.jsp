@@ -36,7 +36,7 @@
 		    %>
 		    <tr>
 		     <td>ENT_<%=candidature.getIdCandid()%></td>
-		     <td><a href="infos_candidature.jsp?id=<%=candidature.getIdCandid()%>"><%=candidature.getNom()%></a></td>
+		     <td><a href="template.jsp?action=infos_candidature&id=<%=candidature.getIdCandid()%>"><%=candidature.getNom()%></a></td>
 		     <td><%=candidature.getAdressepostale()%></td>
 		    </tr>
 		    <%

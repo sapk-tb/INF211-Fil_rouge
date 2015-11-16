@@ -71,7 +71,7 @@
 		      </tr>
 		    </table>
         
-        <a href="liste_candidature.jsp">Retour à la liste des candidatures</a>
+        <a href="template.jsp?action=liste_candidatures">Retour à la liste des candidatures</a>
 
 		    <%
 		  }
