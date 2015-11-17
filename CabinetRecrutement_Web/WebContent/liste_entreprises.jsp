@@ -21,7 +21,7 @@
   </head>
 
   <body>
-  
+
 		<h2>Liste des entreprises référencées :</h2>
 
 		<table id="affichage">

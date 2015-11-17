@@ -69,7 +69,7 @@
         <h2>Menu candidature</h2>
         <ul>
           <li class="menu"><a href="template.jsp?action=maj_candidature&id_candidature=<%=c.getIdCandid()%>">Mettre à jour les informations de la candidature</a></li>
-<%-- 	        <li class="menu"><a href="template.jsp?action=liste_offres&id_candidature=<%=c.getIdCandid()%>">Lister les offres d'emploi qui correspondent à ma candidature</a> (<%=serviceOffreEmploi.listeDesOffresPourUneCandidature(c.getIdCandid()).size()%>)</li> --%>
+ 	        <li class="menu"><a href="template.jsp?action=liste_offres&id_candidature=<%=c.getIdCandid()%>">Lister les offres d'emploi qui correspondent à ma candidature</a> (<%=serviceOffreEmploi.listeDesOffresPourUneCandidature(c).size()%>)</li>
         </ul>
         <ul>
 	        <li style="list-style-image: url(images/effacement.png)" class="menu"><a href="template.jsp?action=efface_candidature&id_candidature=<%=c.getIdCandid()%>" onclick="return confirm('Êtes-vous sûr de vouloir retirer votre candidature ?\n\nAttention, cette opération n\'est pas réversible !\n\n');">Retirer ma candidature</a></li>
